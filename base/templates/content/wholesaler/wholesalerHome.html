@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/panel.css') }}">
+    <title>WholesalerPanel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+<div class="sidenav">
+    <p id="Admin"><img src="{{ url_for('static',filename='img/ssp.jpg') }}"> Wholesaler</p>
+    <hr>
+    <p>Well-come : {{ data }}</p>
+    <hr>
+    <a href="#comingsoon">Edit Profile</a>
+    <hr>
+    <a href="#comingsoon">Upload Dataset</a>
+    <hr>
+    <a href="#comingsoon">Update Dataset</a>
+    <hr>
+    <a href="#comingsoon">Previous prediction</a>
+    <hr>
+    <a href="#comingsoon">New Prices of stocks</a>
+    <hr>
+    <a href="{{ url_for('index') }}">Logout</a>
+</div>
+</body>
+</html>

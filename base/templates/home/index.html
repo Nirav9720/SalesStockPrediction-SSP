@@ -1,0 +1,73 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
+    <title>SSP</title>
+    <link rel="shortcut icon" href="{{ url_for('static',filename='img/ssp.jpg') }}" />
+</head>
+<body>
+
+<div class="container" id="container">
+    <div class="form-container sign-up-container">
+        <form action="/register" id="sign_up" method="post">
+            <h1>Create Account</h1><br>
+            <hr>
+            <br>
+            <input id="signup_input" type="text" placeholder="Fullname" name="full_name" required/>
+            <input id="signup_input" type="email" placeholder="Email" name="user_email" required/>
+            <input id="signup_input" type="password" placeholder="Password" name="user_password" required/>
+            <input id="signup_input" type="text" name="user_contact" placeholder="Contact" required/>
+            <input id="signup_input" type="text" name="org_name" placeholder="Organization Name" required/>
+            <input id="signup_input" type="email" name="org_email" placeholder="Organization Email" required/>
+            <input id="signup_input" type="text" name="org_contact" placeholder="Organization Contact" required/>
+            <input id="signup_input" type="textarea" name="org_address" placeholder="Organization Address" required/>
+            <select id="signup_input" name="user">
+                <option class="option" value="none">none</option>
+                <option class="option" value="wholesaler">Wholesaler</option>
+                <option class="option" value="retailer">Retailer</option>
+            </select><br><br>
+            <button>Sign Up</button>
+        </form>
+
+    </div>
+
+    <div class="form-container sign-in-container">
+        <form action="/verified" id="sign_in" method="post">
+            <h1>Sign in</h1>
+            <br>
+            <input type="email" placeholder="Email" name="user_email" required/>
+            <input type="password" placeholder="Password" name="user_password" required/>
+            {% with msg = get_flashed_messages() %}
+                {% if msg %}
+                    {% for _ in msg %}
+                        <span style="color: red;">{{ _ }}</span>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <a href="#">Forgot your password?</a>
+            <button>Sign In</button>
+        </form>
+    </div>
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <h1>Welcome Back!</h1>
+                <p>To keep connected with us please login with your personal info</p>
+                <button class="ghost" id="signIn">Sign In</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+                <h1>Hello, User!</h1>
+                <p>
+                    Bring the power of data analytics to your busines,
+                    enter your personal details and start journey with us.<br>😄
+                </p>
+                <button class="ghost" id="signUp">Sign Up</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{{ url_for('static',filename='js/script.js') }}"></script>
+</body>
+<footer>
+    <p>
+        All rights reserved to team SSP (Sales Stock Prediction)
+    </p>
+</footer>

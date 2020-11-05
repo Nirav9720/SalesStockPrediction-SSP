@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Retailer Table</title>
+</head>
+<body>
+<table align="center" border="1px">
+    <tr align="center">
+        <td>User_no</td>
+        <td>UserFullName</td>
+        <td>Email</td>
+        <td>Password</td>
+        <td>Contact</td>
+        <td>CompanyName</td>
+        <td>organizationEmail</td>
+        <td>organizationContact</td>
+        <td>organizationAddress</td>
+        <td>Firm</td>
+        <td>Action</td>
+    </tr>
+    {% for record in data %}
+        <tr align="center">
+            <td>{{ record['user_no'] }}</td>
+            <td>{{ record['user_full_name'] }}</td>
+            <td>{{ record['user_email'] }}</td>
+            <td>{{ record['user_password'] }}</td>
+            <td>{{ record['user_contact'] }}</td>
+            <td>{{ record['user_company_name'] }}</td>
+            <td>{{ record['user_org_email'] }}</td>
+            <td>{{ record['user_org_contact'] }}</td>
+            <td>{{ record['user_org_address'] }}</td>
+            <td>{{ record['user_firm_type'] }}</td>
+            <td>
+                <a href="">
+                    Edit
+                </a>
+                <a href="">
+                    Delete
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
